@@ -51,7 +51,7 @@ static const uint8_t u8g_dev_st7565_lm6059_init_seq[] PROGMEM = {
   /* the LM6059 vs LM6063, ADC and SHL have inverted settings */
   0x0a0,		                /* 0x0a1: ADC set to normal (suggested for the LM6059), 0x0a0: Used by Adafruit -> normal mode */
   0x0c8,                            /* common output mode: set scan direction normal operation/SHL Select, 0x0c0 --> SHL = 0, normal, 0x0c8 --> SHL = 1 */
-  0x060,		                /* set display start line */
+  0x040,		                /* set display start line */
 
   0x028 | 0x04,                 /* power control: turn on voltage converter */
   U8G_ESC_DLY(50),         /* delay 50 ms */
@@ -87,7 +87,7 @@ static const uint8_t u8g_dev_st7565_lm6059_data_start[] PROGMEM = {
   U8G_ESC_ADR(0),           /* instruction mode */
   U8G_ESC_CS(1),             /* enable chip */
   0x010,		/* set upper 4 bit of the col adr to 0 */
-  0x001,		/* set lower 4 bit of the col adr  */
+  0x000,		/* set lower 4 bit of the col adr  */
   U8G_ESC_END                /* end of sequence */
 };
 
